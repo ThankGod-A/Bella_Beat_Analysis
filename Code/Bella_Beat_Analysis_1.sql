@@ -2,21 +2,21 @@
 CREATE SCHEMA Beat
 
 CREATE TABLE Beat.Daily_Activities
-(ID							Bigint NOT Null,
-Activity_Date				Date,
-Total_Steps					Int,
-Total_Distance				Decimal,
-Tracker_Distance			Decimal,
+(ID				Bigint NOT Null,
+Activity_Date			Date,
+Total_Steps			Int,
+Total_Distance			Decimal,
+Tracker_Distance		Decimal,
 Logged_Activity_Distance	Decimal,
 Very_Active_Distance		Decimal,
 Moderate_Active_Distance	Decimal,
 Light_Active_Distance		Decimal,
 Sedentary_Active_Distance	Decimal,
-Very_Active_Minutes			Int,
+Very_Active_Minutes		Int,
 Fairly_Active_Minutes		Int,
 Lightly_Active_Minutes		Int,
 Sedentary_Active_Minutes	Int,
-Calories					Int)
+Calories			Int)
 
 COPY Beat.Daily_Activities
 FROM '/Users/DieuMerci/dailyActivity_merged.csv'
@@ -25,11 +25,11 @@ DELIMITER ',' CSV HEADER;
 SELECT * FROM Beat.Daily_Activities
 
 CREATE TABLE Beat.Daily_Sleep
-(ID							Bigint NOT Null,
-Sleep_Day					Timestamp,
-Total_Sleep_Records			Int,
-Total_Minute_Asleep			Int,
-Tracker_Time_In_Bed			Int)
+(ID				Bigint NOT Null,
+Sleep_Day			Timestamp,
+Total_Sleep_Records		Int,
+Total_Minute_Asleep		Int,
+Tracker_Time_In_Bed		Int)
 
 COPY Beat.Daily_Sleep
 FROM '/Users/DieuMerci/sleepDay_merged.csv'
@@ -38,10 +38,10 @@ DELIMITER ',' CSV HEADER;
 SELECT * FROM Beat.Daily_Sleep
 
 CREATE TABLE Beat.Minute_Sleep
-(ID							Bigint NOT Null,
-Date						Timestamp,
-Value						Int,
-Log_Id						Bigint)
+(ID				Bigint NOT Null,
+Date				Timestamp,
+Value				Int,
+Log_Id				Bigint)
 
 COPY Beat.Minute_Sleep
 FROM '/Users/DieuMerci/minuteSleep_merged.csv'
@@ -50,9 +50,9 @@ DELIMITER ',' CSV HEADER;
 SELECT * FROM Beat.Minute_Sleep
 
 CREATE TABLE Beat.Hourly_Steps
-(ID							Bigint NOT Null,
-Activity_Hour				Timestamp,
-Step_Total					Int)
+(ID				Bigint NOT Null,
+Activity_Hour			Timestamp,
+Step_Total			Int)
 
 COPY Beat.Hourly_Steps
 FROM '/Users/DieuMerci/hourlySteps_merged.csv'
